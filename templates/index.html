@@ -1,0 +1,153 @@
+<!Doctype html>
+
+<html>
+	
+<head>
+		
+<meta charset="utf-8">
+		
+<title>Wikipedia Viewer</title>
+		
+
+
+
+
+<style>
+.button {
+  border-radius: 8px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -40px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+
+
+input[type=text] {
+    width: 400px;
+    box-sizing: border-box;
+    border: 4px solid #ccc;
+    border-radius: 25px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 53%;
+}
+
+
+h1 {
+    text-shadow: 4px 2px #f4511e;
+    color: white;
+    font-size: 100px;
+    margin: 2px;
+}
+
+
+
+
+
+
+
+</style>
+</head>
+
+
+
+<body background="..\static\images\baaz8.jpg" >		
+
+<div class="container">
+			
+<div class="jumbotron">
+			 	
+<div class="content-wrap text-center">
+				   
+
+<h1><center>WIKIPEDIA  VIEWER</center><br></h1>
+
+
+<form method="POST" action="/search">
+	
+
+<center> 
+
+<input id="tags" type="text" name="search" placeholder="Search Wikipedia..."autofocus="on" >
+<br>
+ 
+ 
+<button id="getResult" class="button">
+ <i class="fa fa-search"></i>
+
+<span>SEARCH</span>
+
+</button>
+				 
+
+
+ <a id="randomResult" class="button" href="https://en.wikipedia.org/wiki/Special:Random" target="_blank"> _RANDOM_  </a>				    
+		
+
+
+</center>
+
+</form>
+</div>
+
+ <div class="wrap text-center">
+
+ <ul>
+ </ul>
+
+  </div>
+
+
+  {% block body %}
+
+  {% endblock %}
+			
+</div>
+</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+{% extends "index.html" %}
+
+
+{% block body %}
+
+	
+<div class ="wrap text-center">
+	
+<style>
+ul {
+    list-style-type: none;
+    margin: 17px;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+}
+
+ul {
+    float: left;
+}
+
+ul a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+ul a:hover {
+    background-color: #f4511e;
+}s
+
+
+
+
+
+
+</style>
+
+
+
+<ul>
+
+{% for i in range(10) %}
+
+
+<a style="font-size: 21px;" target="_blank" href="{{url_links[i]}}"><strong>{{title[i]}}</strong> <br> {{para[i]}}</a>
+
+<br>
+<br>
+<br>
+
+{% endfor %}
+
+</ul>
+
+
+
+
+
+</div>
+
+
+
+
+{% endblock %}
